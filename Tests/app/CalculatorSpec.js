@@ -62,7 +62,7 @@ describe('Calculator', function() {
             calculator = new Calculator();
         });
 
-        /*this is an async test
+        /*this is an async test (mocha-style)
         * - done is passed as a parameter
         * - it is called when everything is done
         * - without it, test seems to pass, but following error shows on console:
