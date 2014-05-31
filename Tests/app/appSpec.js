@@ -64,5 +64,19 @@ describe('App', function () {
             expect(quantity).toEqual(-999);
             expect(spy).toHaveBeenCalled();
         });
+
+        it('should verify spy arguments', function () {
+            var spy = jasmine.createSpy('mySpy');
+            spy(1);
+            expect(spy).toHaveBeenCalledWith(1);
+        });
+
+        it('should verify CallbackTester spy arguments', function () {
+            var spy = jasmine.createSpy(app, 'CallbackTester');
+            var func = function() {};
+
+            spy(func);
+            expect(spy).toHaveBeenCalledWith(func);
+        });
     });
 });

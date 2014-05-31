@@ -52,6 +52,27 @@ describe('Calculator', function() {
     });
 
     /*
+    * Spy tests
+    * */
+    describe('Calculator spy tests', function () {
+
+        it('should spy on add callthru', function () {
+            var spy = spyOn(calculator, 'add').and.callThrough();
+            calculator.add(1, 1);
+
+            expect(spy).toHaveBeenCalledWith(1,1);
+        });
+
+        it('should spy on divide callthru', function () {
+            var spy = spyOn(calculator, 'divide').and.callThrough();
+            calculator.divide(1, 1);
+
+            expect(spy).toHaveBeenCalledWith(1,1);
+        });
+
+    });
+
+    /*
     * UI tests
     * */
     describe('Calculator UI', function () {
